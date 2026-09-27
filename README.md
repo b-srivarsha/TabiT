@@ -4,12 +4,11 @@ A local-only Chromium extension that measures **focused tab time** per website a
 
 <img width="316" height="197" alt="Screenshot 2026-09-27 at 1 27 51 PM" src="https://github.com/user-attachments/assets/77298f16-ae49-43a9-93df-6074276d3f84" />
 
-<img width="354" height="474" alt="Screenshot 2026-09-27 at 1 28 15 PM" src="https://github.com/user-attachments/assets/fb51dd93-0c5b-4d4a-a290-6ddc78922ce8" />
-
 No accounts. No cloud. No telemetry. Everything lives in `chrome.storage.local`.
 
 ## Load unpacked (Chrome / Edge / Brave)
 
+<img width="354" height="474" alt="Screenshot 2026-09-27 at 1 28 15 PM" src="https://github.com/user-attachments/assets/fb51dd93-0c5b-4d4a-a290-6ddc78922ce8" />
 1. Open `chrome://extensions` (or `edge://extensions` / `brave://extensions`).
 2. Turn on **Developer mode**.
 3. Click **Load unpacked**.
