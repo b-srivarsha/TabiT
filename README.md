@@ -9,6 +9,7 @@ No accounts. No cloud. No telemetry. Everything lives in `chrome.storage.local`.
 ## Load unpacked (Chrome / Edge / Brave)
 
 <img width="354" height="474" alt="Screenshot 2026-09-27 at 1 28 15 PM" src="https://github.com/user-attachments/assets/fb51dd93-0c5b-4d4a-a290-6ddc78922ce8" />
+
 1. Open `chrome://extensions` (or `edge://extensions` / `brave://extensions`).
 2. Turn on **Developer mode**.
 3. Click **Load unpacked**.
