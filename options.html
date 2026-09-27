@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TabiT — OPTIONS</title>
+    <link rel="stylesheet" href="styles/crt.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="crt-root">
+      <div class="window wrap">
+        <div class="titlebar">
+          <span class="title">TabiT — CONTROL PANEL</span>
+        </div>
+        <div class="hazard"></div>
+        <div class="body">
+          <p class="lead">SYSTEM CONFIGURATION  •  ALL SETTINGS STORED LOCALLY</p>
+
+          <label class="field">WEEK STARTS ON</label>
+          <select id="week-start"></select>
+
+          <label class="field">IDLE TIMEOUT (SECONDS, MIN 15)</label>
+          <input id="idle-timeout" type="number" min="15" max="300" step="1" />
+
+          <label class="field">BLACKLIST DOMAINS (ONE PER LINE)</label>
+          <textarea id="blacklist" rows="6" placeholder="youtube.com&#10;twitter.com"></textarea>
+
+          <label class="field row">
+            <span>PC SPEAKER BEEPS</span>
+            <select id="sounds">
+              <option value="off">OFF (DEFAULT)</option>
+              <option value="on">ON</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button type="button" class="btn" id="btn-save">SAVE SETTINGS</button>
+            <button type="button" class="btn" id="btn-export">EXPORT RAW JSON</button>
+            <button type="button" class="btn" id="btn-import">IMPORT RAW JSON</button>
+            <button type="button" class="btn btn-red" id="btn-reset">RESET ALL DATA</button>
+          </div>
+          <input id="import-file" type="file" accept="application/json,.json" class="hidden" />
+          <div id="status" class="sunken-black status"></div>
+        </div>
+        <div class="statusbar">LOCAL DATA ONLY • NO TELEMETRY • v1.0</div>
+      </div>
+    </div>
+    <script src="shared/common.js"></script>
+    <script src="shared/sound.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

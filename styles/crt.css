@@ -1,0 +1,383 @@
+/* TabiT — CRT / Windows 3.1 system-dialog look. Palette is closed. */
+
+@font-face {
+  font-family: "VT323";
+  src: url("../fonts/VT323-Regular.ttf") format("truetype");
+  font-display: block;
+}
+
+:root {
+  --ibm-blue: #0000aa;
+  --win-gray: #c0c0c0;
+  --white: #ffffff;
+  --black: #000000;
+  --cyan: #00ffff;
+  --yellow: #ffff00;
+  --red: #ff0000;
+  --green: #00ff00;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ibm-blue);
+  color: var(--white);
+  font-family: "VT323", "IBM Plex Mono", "Perfect DOS VGA 437", ui-monospace,
+    "Courier New", monospace;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  image-rendering: pixelated;
+}
+
+.crt-root {
+  position: relative;
+  min-height: 100%;
+  background: var(--ibm-blue);
+  overflow: hidden;
+}
+
+.crt-root::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 2px,
+    rgba(0, 0, 0, 0.18) 3px
+  );
+}
+
+.crt-root::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -2%;
+  z-index: 9;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.45);
+  border-radius: 18px / 14px;
+  transform: perspective(600px) rotateX(0.4deg);
+}
+
+.window {
+  position: relative;
+  z-index: 1;
+  background: var(--win-gray);
+  color: var(--black);
+  border: 1px solid var(--black);
+  box-shadow:
+    1px 1px 0 var(--white) inset,
+    -1px -1px 0 var(--black) inset,
+    2px 2px 0 var(--white) inset,
+    -2px -2px 0 var(--black) inset,
+    4px 4px 0 var(--black);
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--ibm-blue);
+  color: var(--white);
+  padding: 3px 4px 3px 8px;
+  min-height: 24px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.titlebar .title {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.sysbtn {
+  background: var(--win-gray);
+  color: var(--black);
+  border: none;
+  padding: 0 8px;
+  height: 18px;
+  line-height: 16px;
+  cursor: pointer;
+  box-shadow:
+    1px 1px 0 var(--white) inset,
+    -1px -1px 0 var(--black) inset;
+}
+
+.sysbtn:active {
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset;
+}
+
+.body {
+  padding: 10px;
+}
+
+.inset {
+  background: var(--win-gray);
+  border: none;
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset;
+  padding: 8px;
+}
+
+.sunken-black {
+  background: var(--black);
+  color: var(--cyan);
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset,
+    2px 2px 0 var(--white) inset;
+  padding: 8px 10px;
+}
+
+.btn {
+  background: var(--win-gray);
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  padding: 6px 14px;
+  box-shadow:
+    1px 1px 0 var(--white) inset,
+    -1px -1px 0 var(--black) inset,
+    2px 2px 0 var(--white) inset,
+    -2px -2px 0 var(--black) inset;
+}
+
+.btn:hover {
+  outline: 1px dotted var(--black);
+  outline-offset: -4px;
+}
+
+.btn:active {
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset,
+    2px 2px 0 var(--black) inset,
+    -2px -2px 0 var(--white) inset;
+  padding: 7px 13px 5px 15px;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 20px;
+  width: 100%;
+  padding: 10px 8px;
+  text-transform: uppercase;
+}
+
+.btn-red {
+  background: var(--red);
+  color: var(--white);
+}
+
+.link {
+  color: var(--ibm-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.statusbar {
+  padding: 4px 8px 6px;
+  color: var(--black);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.digits {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.hazard {
+  height: 14px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--black) 0 8px,
+    var(--yellow) 8px 16px
+  );
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.progress {
+  display: flex;
+  gap: 3px;
+  background: var(--black);
+  padding: 4px;
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset;
+}
+
+.progress .block {
+  width: 14px;
+  height: 16px;
+  background: var(--black);
+}
+
+.progress .block.on {
+  background: var(--cyan);
+}
+
+.bar-track {
+  height: 12px;
+  background: var(--black);
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--cyan);
+}
+
+.bar-fill.warn {
+  background: var(--yellow);
+}
+
+.bar-fill.bad {
+  background: var(--red);
+}
+
+label.field {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  width: 100%;
+  padding: 4px 6px;
+  box-shadow:
+    1px 1px 0 var(--black) inset,
+    -1px -1px 0 var(--white) inset;
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.muted {
+  color: #000000;
+  opacity: 0.85;
+}
+
+.warn-text {
+  color: var(--yellow);
+}
+
+.ok-text {
+  color: var(--green);
+}
+
+.bad-text {
+  color: var(--red);
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Windows 3.1-ish scrollbar */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #c0c0c0 #000000;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--win-gray);
+  border: 1px solid var(--black);
+  box-shadow:
+    1px 1px 0 var(--white) inset,
+    -1px -1px 0 var(--black) inset;
+}
+
+::-webkit-scrollbar-button {
+  background: var(--win-gray);
+  border: 1px solid var(--black);
+  height: 16px;
+}
+
+.pixel-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+  vertical-align: middle;
+}
+
+.dialog-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: var(--ibm-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.dialog-overlay .window {
+  width: 100%;
+  max-width: 300px;
+}

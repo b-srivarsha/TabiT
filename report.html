@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TabiT — WEEKLY TIME AUDIT</title>
+    <link rel="stylesheet" href="styles/crt.css" />
+    <link rel="stylesheet" href="report.css" />
+  </head>
+  <body>
+    <div class="crt-root">
+      <div class="window wrap">
+        <div class="titlebar">
+          <span class="title">TabiT — WEEKLY TIME AUDIT</span>
+          <button type="button" class="sysbtn" id="btn-x">[X]</button>
+        </div>
+        <div class="hazard"></div>
+        <div class="body">
+          <div class="banner">
+            <pre class="pixel-art" aria-hidden="true">
+  ▲
+ /!\
+ -----
+            </pre>
+            <div>
+              <div class="warn-text">WARNING</div>
+              <h1>WEEKLY TIME AUDIT</h1>
+              <div id="range" class="digits">--------</div>
+            </div>
+          </div>
+
+          <div class="inset scroll">
+            <div class="double-box">
+              <div class="kicker">TOTAL SCREEN TIME THIS WEEK</div>
+              <div id="week-total" class="digits huge">00:00:00</div>
+            </div>
+
+            <div id="worst" class="callout hidden">
+              <span class="skull">☠</span>
+              MOST DISTRACTING DOMAIN:
+              <span id="worst-domain" class="digits"></span>
+              <span id="worst-time" class="digits"></span>
+            </div>
+
+            <h2>TOP 10 SITES</h2>
+            <div id="top10"></div>
+
+            <h2>DOMAIN BREAKDOWN</h2>
+            <div class="charts">
+              <canvas id="pie" width="160" height="160"></canvas>
+              <div id="legend"></div>
+            </div>
+
+            <h2>DAILY TOTALS (THIS WEEK)</h2>
+            <div id="daily"></div>
+
+            <h2>LAST 7 DAYS</h2>
+            <div id="last7"></div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn" id="btn-csv">EXPORT CSV</button>
+            <button type="button" class="btn" id="btn-txt">EXPORT TEXT</button>
+            <button type="button" class="btn btn-yellow" id="btn-dismiss">
+              DISMISS — PRESS TO CONTINUE
+            </button>
+          </div>
+        </div>
+        <div class="statusbar">LOCAL DATA ONLY • NO TELEMETRY • PRESS DISMISS TO CONTINUE…</div>
+      </div>
+    </div>
+    <script src="shared/common.js"></script>
+    <script src="shared/sound.js"></script>
+    <script src="report.js"></script>
+  </body>
+</html>

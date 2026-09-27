@@ -1,0 +1,126 @@
+body {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.banner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.pixel-art {
+  margin: 0;
+  color: #ffff00;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.scroll {
+  max-height: 58vh;
+  overflow: auto;
+}
+
+.double-box {
+  border: 4px double #000;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 12px;
+  background: #000;
+  color: #00ffff;
+}
+
+.kicker {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.huge {
+  font-size: 42px;
+  letter-spacing: 4px;
+}
+
+.callout {
+  border: 2px solid #ff0000;
+  background: #000;
+  color: #ffff00;
+  padding: 8px;
+  margin: 12px 0;
+  text-align: center;
+}
+
+.skull {
+  color: #ff0000;
+}
+
+h2 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 16px 0 8px;
+  border-bottom: 1px solid #000;
+}
+
+.site-row,
+.day-row {
+  display: grid;
+  grid-template-columns: 28px 1fr 90px;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.day-row {
+  grid-template-columns: 40px 1fr 90px;
+}
+
+.charts {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+#pie {
+  image-rendering: pixelated;
+  width: 160px;
+  height: 160px;
+  background: #000;
+  box-shadow:
+    1px 1px 0 #000 inset,
+    -1px -1px 0 #fff inset;
+}
+
+.legend-row {
+  font-size: 16px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1px #000;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.actions .btn-yellow {
+  grid-column: 1 / -1;
+}

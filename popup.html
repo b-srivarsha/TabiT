@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TabiT v1.0</title>
+    <link rel="stylesheet" href="styles/crt.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="crt-root">
+      <div class="window">
+        <div class="titlebar">
+          <span class="title">TabiT v1.0</span>
+          <button type="button" class="sysbtn" id="btn-close" title="Close">[X]</button>
+        </div>
+        <div class="body">
+          <div id="boot">
+            <div>INITIALIZING WATCHDOG…</div>
+            <div class="progress" id="boot-bar" aria-hidden="true"></div>
+            <div id="boot-msg">DETECTING ACTIVE CONSOLE</div>
+          </div>
+          <div id="main" class="hidden">
+            <div class="sunken-black">
+              <div class="live-label" id="live-state">■ TRACKING</div>
+              <div class="live-domain digits" id="live-domain">--------</div>
+              <div class="live-timer digits" id="live-timer">00:00:00</div>
+              <div class="reason" id="live-reason"></div>
+            </div>
+            <div class="inset today-box">
+              <div class="today-label">TODAY</div>
+              <div class="today-total digits" id="today-total">00:00:00</div>
+            </div>
+            <div class="inset rank-list" id="rank-list"></div>
+            <button type="button" class="btn btn-yellow" id="btn-report">
+              ★ WEEKLY REPORT
+            </button>
+            <div class="links">
+              <button type="button" class="link" id="btn-options">OPTIONS</button>
+              <button type="button" class="link" id="btn-reset">RESET TODAY</button>
+            </div>
+          </div>
+        </div>
+        <div class="statusbar">LOCAL DATA ONLY • NO TELEMETRY</div>
+      </div>
+
+      <div id="confirm" class="dialog-overlay hidden">
+        <div class="window">
+          <div class="titlebar">
+            <span class="title">CONFIRM</span>
+          </div>
+          <div class="body">
+            <p>ZERO TODAY’S COUNTERS?</p>
+            <div class="row">
+              <button type="button" class="btn" id="confirm-no">CANCEL</button>
+              <button type="button" class="btn btn-red" id="confirm-yes">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="shared/common.js"></script>
+    <script src="shared/sound.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
