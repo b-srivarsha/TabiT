@@ -1,5 +1,7 @@
 # TabiT
 
+Tracking your website usage over time is essential because daily micro-distractions operate like silent interest on a bad debt: spending "just five minutes" on a site each day quietly burns over 30 hours of your life every year, and TabiT delivers the hard reality check required to reclaim your bandwidth.
+
 A local-only Chromium extension that measures **focused tab time** per website and prints a weekly audit. The UI is a late-80s / early-90s DOS / Windows 3.1 warning dialog on IBM blue.
 
 <img width="316" height="197" alt="Screenshot 2026-09-27 at 1 27 51 PM" src="https://github.com/user-attachments/assets/77298f16-ae49-43a9-93df-6074276d3f84" />
